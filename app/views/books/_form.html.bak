@@ -23,11 +23,6 @@
     <%= text_field_tag "book[author][]", author %>
   </div>
 <% end %> 
-<%- if @book.author.empty? %>
-  <div class="field">
-    <%= text_field_tag "book[author][]", nil %>
-  </div>
-<%- end %> 
 </div>
 
 <!--
