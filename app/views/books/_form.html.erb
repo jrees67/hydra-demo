@@ -12,8 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title, "Titles" %>
+<% @book.title.each do |title| %>
+  <div class="field">
+    <%= text_field_tag "book[title][]", title %>
+  </div>
+<% end %> 
+<%- if @book.title.empty? %>
+  <div class="field">
+    <%= text_field_tag "book[title][]", nil %>
+  </div>
+<%- end %>
+
   </div>
   
 <div class="field">
@@ -31,6 +41,11 @@
 </div>
 
 <!--
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
 <div class="field">
     <%= f.label :author %><br />
     <%= f.text_field :author %>

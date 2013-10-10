@@ -1,6 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Title(s):</b>
+<ul>
+   <%= @book.title.each do |title|%>
+	<li><%= title %></li>
+  <%- end %>
+</ul>
+</p>
+
+<p>
+  <b>Author(s):</b>
+  <ul>
+    <%- @book.author.each do |author|%>
+      <li><%= author %></li>
+    <%- end %>
+  </ul>
+</p>
+
+<!-- 
+<p>
   <b>Title:</b>
   <%= @book.title %>
 </p>
@@ -9,7 +28,7 @@
   <b>Author:</b>
   <%= @book.author %>
 </p>
-
+-->
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
